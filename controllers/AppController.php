@@ -8,6 +8,11 @@ class AppController {
         $this->request = $_SERVER['REQUEST_METHOD'];
     }
 
+    public function index()
+    {
+        $this->render('index');
+    }
+
     protected function isGet(): bool
     {
         return $this->request === 'GET';
