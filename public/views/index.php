@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    TEST
+    TEST - index.php
     <h1>
         <?= $id ?>
     </h1>
