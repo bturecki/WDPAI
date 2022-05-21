@@ -30,3 +30,14 @@ section {
     flex-direction: column;
     justify-content: space-between;
 }
+
+section.car-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.car-form>form {
+    display: flex;
+    flex-direction: column;
+}

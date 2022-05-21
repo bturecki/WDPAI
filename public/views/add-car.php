@@ -42,18 +42,24 @@
                     <i class="fas fa-plus"></i> add car
                 </div>
             </header>
-            <section class="cars">
-                <div id="car-1">
-                    <img src="public/uploads/<?=$car->getImage() ?>">
-                    <div>
-                        <h2><?= $car->getTitle() ?></h2>
-                        <p><?= $car->getDescription() ?></p>
-                        <div class="social-section">
-                            <i class="fas fa-heart"> 600</i>
-                            <i class="fas fa-minus-square"> 121</i>
-                        </div>
+            <section class="car-form">
+                <h1>UPLOAD</h1>
+                <form action="addCar" method="POST" ENCTYPE="multipart/form-data">
+                    <div class="messages">
+                        <?php
+                            if(isset($messages)){
+                                foreach($messages as $message) {
+                                    echo $message;
+                                }
+                            }
+                        ?>
                     </div>
-                </div>
+                    <input name="title" type="text" placeholder="title">
+                    <textarea name="description" rows=5 placeholder="description"></textarea>
+
+                    <input type="file" name="file"/><br/>
+                    <button type="submit">send</button>
+                </form>
             </section>
         </main>
     </div>
