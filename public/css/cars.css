@@ -6,14 +6,14 @@ section {
     overflow: auto;
 }
 
-.projects>div>img {
+.cars>div>img {
     height: 50%;
     width: 100%;
     object-fit: cover;
     border-radius: 1em 1em 0 0;
 }
 
-.projects>div>div {
+.cars>div>div {
     height: 50%;
     margin: 1em;
     color: #fb2626;
@@ -22,7 +22,7 @@ section {
     justify-content: space-around;
 }
 
-.projects>div {
+.cars>div {
     border: 1px solid gray;
     border-radius: 1em 1em 0 0;
     height: 400px;

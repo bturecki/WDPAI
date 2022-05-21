@@ -2,10 +2,10 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/projects.css">
+    <link rel="stylesheet" type="text/css" href="public/css/cars.css">
 
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
-    <title>PROJECTS</title>
+    <title>CARS</title>
 </head>
 
 <body>
@@ -14,20 +14,20 @@
             <img src="public/img/logo.svg">
             <ul>
                 <li>
-                    <i class="fas fa-project-diagram"></i>
-                    <a href="#" class="button">projects</a>
+                    <i class="fas fa-car-diagram"></i>
+                    <a href="#" class="button">cars</a>
                 </li>
                 <li>
-                    <i class="fas fa-project-diagram"></i>
-                    <a href="#" class="button">projects</a>
+                    <i class="fas fa-car-diagram"></i>
+                    <a href="#" class="button">cars</a>
                 </li>
                 <li>
-                    <i class="fas fa-project-diagram"></i>
-                    <a href="#" class="button">projects</a>
+                    <i class="fas fa-car-diagram"></i>
+                    <a href="#" class="button">cars</a>
                 </li>
                 <li>
-                    <i class="fas fa-project-diagram"></i>
-                    <a href="#" class="button">projects</a>
+                    <i class="fas fa-car-diagram"></i>
+                    <a href="#" class="button">cars</a>
                 </li>
             </ul>
         </nav>
@@ -35,16 +35,16 @@
             <header>
                 <div class="search-bar">
                     <form>
-                        <input placeholder="search project">
+                        <input placeholder="search car">
                     </form>
                 </div>
-                <div class="add-project">
-                    <i class="fas fa-plus"></i> add project
+                <div class="add-car">
+                    <i class="fas fa-plus"></i> add car
                 </div>
             </header>
-            <section class="projects">
-                <div id="project-1">
-                    <img src="public/img/uploads/project_smile.jpg">
+            <section class="cars">
+                <div id="car-1">
+                    <img src="public/img/uploads/car_ferrari.jpg">
                     <div>
                         <h2>title</h2>
                         <p>description</p>

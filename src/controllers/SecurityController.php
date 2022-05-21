@@ -17,7 +17,7 @@ class SecurityController extends AppController {
         $password = $_POST['password'];
 
         if ($user->getEmail() !== $email) {
-            return $this->render('login', ['messages' => ['User with this email not exist!']]);
+            return $this->render('login', ['messages' => ['User with this email does not exist!']]);
         }
 
         if ($user->getPassword() !== $password) {
@@ -25,6 +25,6 @@ class SecurityController extends AppController {
         }
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/projects");
+        header("Location: {$url}/cars");
     }
 }
