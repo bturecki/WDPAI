@@ -31,8 +31,8 @@ class CarRepository extends Repository
     {
         $date = new DateTime();
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO t_car (make, model)
-            VALUES (?, ?)
+            INSERT INTO t_car (make, model, image)
+            VALUES (?, ?, ?)
         ');
 
         //TODO you should get this value from logged user session
@@ -40,7 +40,8 @@ class CarRepository extends Repository
 
         $stmt->execute([
             $car->getTitle(),
-            $car->getDescription()
+            $car->getDescription(),
+            $car->getImage()
         ]);
     }
 }
