@@ -2,6 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Car.php';
+require_once __DIR__.'/../repository/CarRepository.php';
 
 class CarController extends AppController {
 
@@ -11,6 +12,13 @@ class CarController extends AppController {
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
     private $messages = [];
+    private $carRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->carRepository = new CarRepository();
+    }
 
     public function addCar()
     {   
@@ -20,9 +28,8 @@ class CarController extends AppController {
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );
 
-            // TODO create new car object and save it in database
             $car = new Car($_POST['title'], $_POST['description'], $_FILES['file']['name']);
-
+            $this->carRepository->addCar($car);
             return $this->render('cars', ['messages' => $this->messages, 'car' => $car]);
         }
         $this->render('add-car', ['messages' => $this->message]);
