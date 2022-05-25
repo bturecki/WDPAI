@@ -44,4 +44,25 @@ class CarRepository extends Repository
             $car->getImage()
         ]);
     }
+
+    public function getCars(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM t_car;
+        ');
+        $stmt->execute();
+        $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+         foreach ($cars as $car) {
+             $result[] = new Car(
+                 $car['make'],
+                 $car['model'],
+                 $car['image']
+             );
+         }
+
+        return $result;
+    }
 }

@@ -43,17 +43,15 @@
                 </div>
             </header>
             <section class="cars">
-                <div id="car-1">
-                    <img src="public/uploads/<?=$car->getImage() ?>">
-                    <div>
-                        <h2><?= $car->getTitle() ?></h2>
-                        <p><?= $car->getDescription() ?></p>
-                        <div class="social-section">
-                            <i class="fas fa-heart"> 600</i>
-                            <i class="fas fa-minus-square"> 121</i>
+                <?php foreach($cars as $car): ?>
+                    <div id="car-1">
+                        <img src="public/uploads/<?= $car->getImage(); ?>">
+                        <div>
+                            <h2><?= $car->getTitle(); ?></h2>
+                            <p><?= $car->getDescription(); ?></p>
                         </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
             </section>
         </main>
     </div>

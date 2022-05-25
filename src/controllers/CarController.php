@@ -20,6 +20,13 @@ class CarController extends AppController {
         $this->carRepository = new CarRepository();
     }
 
+
+    public function cars()
+    {
+        $cars = $this->carRepository->getCars();
+        $this->render('cars', ['cars' => $cars]);
+    }
+
     public function addCar()
     {   
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
