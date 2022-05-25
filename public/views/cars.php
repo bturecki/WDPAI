@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/cars.css">
 
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>CARS</title>
 </head>
 
@@ -34,9 +35,7 @@
         <main>
             <header>
                 <div class="search-bar">
-                    <form>
-                        <input placeholder="search car">
-                    </form>
+                    <input placeholder="search car">
                 </div>
                 <div class="add-car">
                     <i class="fas fa-plus"></i> add car
@@ -56,3 +55,13 @@
         </main>
     </div>
 </body>
+
+<template id="car-template">
+    <div id="">
+        <img src="">
+        <div>
+            <h2>title</h2>
+            <p>description</p>
+        </div>
+    </div>
+</template>
