@@ -20,16 +20,24 @@ class AppController {
 
     protected function render(string $template = null, array $variables = [])
     {
-        $templatePath = 'public/views/'. $template.'.php';
-        $output = 'File not found';
+        session_start();
+        if ($template == 'login' || $template == 'register' || $_SESSION['loggedin'] == true)
+        {
+            $templatePath = 'public/views/'. $template.'.php';
+            $output = 'File not found';
+                    
+            if(file_exists($templatePath)){
+                extract($variables);
                 
-        if(file_exists($templatePath)){
-            extract($variables);
-            
-            ob_start();
-            include $templatePath;
-            $output = ob_get_clean();
+                ob_start();
+                include $templatePath;
+                $output = ob_get_clean();
+            }
+            print $output; 
         }
-        print $output;
+        else
+        {
+            echo "Please log in first to see this page.";
+        }
     }
 }

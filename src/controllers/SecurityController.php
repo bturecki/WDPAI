@@ -16,7 +16,10 @@ class SecurityController extends AppController {
 
     public function login()
     {
-        if (!$this->isPost()) {
+        session_start();
+        if (!$this->isPost()) 
+        {
+            session_destroy();
             return $this->render('login');
         }
 
@@ -34,14 +37,17 @@ class SecurityController extends AppController {
         if (!password_verify($_POST['password'], $user->getPassword())) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
-
+        $_SESSION['loggedin'] = true;
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/cars");
     }
 
     public function register()
     {
-        if (!$this->isPost()) {
+        session_start();
+        if (!$this->isPost()) 
+        {
+            session_destroy();
             return $this->render('register');
         }
 
