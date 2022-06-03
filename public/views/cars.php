@@ -20,15 +20,15 @@
                 </li>
                 <li>
                     <i class="fas fa-car-diagram"></i>
-                    <a href="#" class="button">cars</a>
+                    <a href="#" class="button">add car</a>
                 </li>
                 <li>
                     <i class="fas fa-car-diagram"></i>
-                    <a href="#" class="button">cars</a>
+                    <a href="#" class="button">users</a>
                 </li>
                 <li>
                     <i class="fas fa-car-diagram"></i>
-                    <a href="#" class="button">cars</a>
+                    <a href=".." class="button">log out</a>
                 </li>
             </ul>
         </nav>
@@ -36,9 +36,6 @@
             <header>
                 <div class="search-bar">
                     <input placeholder="search car">
-                </div>
-                <div class="add-car">
-                    <i class="fas fa-plus"></i> add car
                 </div>
             </header>
             <section class="cars">
