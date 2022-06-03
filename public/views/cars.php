@@ -16,11 +16,11 @@
             <ul>
                 <li>
                     <i class="fas fa-car-diagram"></i>
-                    <a href="#" class="button">cars</a>
+                    <a href="cars" class="button">cars</a>
                 </li>
                 <li>
                     <i class="fas fa-car-diagram"></i>
-                    <a href="#" class="button">add car</a>
+                    <a href="addCar" class="button">add car</a>
                 </li>
                 <li>
                     <i class="fas fa-car-diagram"></i>

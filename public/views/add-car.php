@@ -15,11 +15,11 @@
             <ul>
                 <li>
                     <i class="fas fa-car-diagram"></i>
-                    <a href="#" class="button">cars</a>
+                    <a href="cars" class="button">cars</a>
                 </li>
                 <li>
                     <i class="fas fa-car-diagram"></i>
-                    <a href="#" class="button">add car</a>
+                    <a href="addCar" class="button">add car</a>
                 </li>
                 <li>
                     <i class="fas fa-car-diagram"></i>
@@ -32,16 +32,6 @@
             </ul>
         </nav>
         <main>
-            <header>
-                <div class="search-bar">
-                    <form>
-                        <input placeholder="search car">
-                    </form>
-                </div>
-                <div class="add-car">
-                    <i class="fas fa-plus"></i> add car
-                </div>
-            </header>
             <section class="car-form">
                 <h1>UPLOAD</h1>
                 <form action="addCar" method="POST" ENCTYPE="multipart/form-data">
