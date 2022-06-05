@@ -42,6 +42,11 @@ class CarController extends AppController {
         $this->render('add-car', ['messages' => $this->message]);
     }
 
+    public function commentCar()
+    {   
+        $this->render('comment-car', ['messages' => $this->message]);
+    }
+
     public function search()
     {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';

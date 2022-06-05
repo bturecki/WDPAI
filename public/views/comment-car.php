@@ -5,8 +5,6 @@
     <link rel="stylesheet" type="text/css" href="public/css/cars.css">
 
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./public/js/search.js" defer></script>
-    <script type="text/javascript" src="./public/js/comments.js" defer></script>
     <title>CARS</title>
 </head>
 
@@ -34,35 +32,22 @@
             </ul>
         </nav>
         <main>
-            <header>
-                <div class="search-bar">
-                    <input placeholder="search car">
-                </div>
-            </header>
-            <section class="cars">
-                <?php foreach($cars as $car): ?>
-                    <div id="<?= $car->getId(); ?>">
-                        <img src="public/uploads/<?= $car->getImage(); ?>">
-                        <div>
-                            <h2><?= $car->getTitle(); ?></h2>
-                            <p><?= $car->getDescription(); ?></p>
-                            <div class="social-section">
-                            <i class="fas fa-comment">comment</i>
-                        </div>
-                        </div>
+            <section class="car-form">
+                <h1>COMMENT CAR ID <?php echo $_GET['id']?></h1>
+                <form action="commentCar" method="POST" ENCTYPE="multipart/form-data">
+                    <div class="messages">
+                        <?php
+                            if(isset($messages)){
+                                foreach($messages as $message) {
+                                    echo $message;
+                                }
+                            }
+                        ?>
                     </div>
-                <?php endforeach; ?>
+                    <textarea name="description" rows=5 placeholder="description"></textarea>
+                    <button type="submit">send</button>
+                </form>
             </section>
         </main>
     </div>
 </body>
-
-<template id="car-template">
-    <div id="">
-        <img src="">
-        <div>
-            <h2>title</h2>
-            <p>description</p>
-        </div>
-    </div>
-</template>

@@ -59,7 +59,8 @@ class CarRepository extends Repository
              $result[] = new Car(
                  $car['make'],
                  $car['model'],
-                 $car['image']
+                 $car['image'],
+                 $car['id']
              );
          }
 
