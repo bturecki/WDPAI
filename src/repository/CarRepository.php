@@ -31,17 +31,18 @@ class CarRepository extends Repository
     {
         $date = new DateTime();
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO t_car (make, model, image)
-            VALUES (?, ?, ?)
+            INSERT INTO t_car (make, model, image, car_owner)
+            VALUES (?, ?, ?, ?)
         ');
 
-        //TODO you should get this value from logged user session
-        $assignedById = 1;
+        session_start();
+        $addedById = $_SESSION['user_id'];
 
         $stmt->execute([
             $car->getTitle(),
             $car->getDescription(),
-            $car->getImage()
+            $car->getImage(),
+            $addedById
         ]);
     }
 

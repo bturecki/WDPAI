@@ -38,6 +38,7 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
         $_SESSION['loggedin'] = true;
+        $_SESSION['user_id'] = $user->getId();
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/cars");
     }

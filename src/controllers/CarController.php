@@ -37,7 +37,8 @@ class CarController extends AppController {
 
             $car = new Car($_POST['title'], $_POST['description'], $_FILES['file']['name']);
             $this->carRepository->addCar($car);
-            return $this->render('cars', ['messages' => $this->messages, 'car' => $car]);
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/cars");
         }
         $this->render('add-car', ['messages' => $this->message]);
     }
