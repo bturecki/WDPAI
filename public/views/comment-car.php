@@ -44,7 +44,7 @@
                             }
                         ?>
                     </div>
-                    <textarea name="description" rows=5 placeholder="description"></textarea>
+                    <textarea name="description" rows=5 placeholder="comment"></textarea>
                     <button type="submit">send</button>
                 </form>
             </section>

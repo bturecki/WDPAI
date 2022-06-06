@@ -44,6 +44,11 @@ class CarController extends AppController {
 
     public function commentCar()
     {   
+        if ($this->isPost()) 
+        {
+            $cars = $this->carRepository->getCars();
+            return $this->render('cars', ['cars' => $cars]);
+        }
         $this->render('comment-car', ['messages' => $this->message]);
     }
 
