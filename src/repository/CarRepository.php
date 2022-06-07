@@ -46,6 +46,23 @@ class CarRepository extends Repository
         ]);
     }
 
+    public function addCarComment(int $carId, string $comment): void
+    {
+        $stmt = $this->database->connect()->prepare('
+        INSERT INTO t_car_comment (comment, i_user, car_id)
+        VALUES (?, ?, ?)
+        ');
+
+        session_start();
+        $addedById = $_SESSION['user_id'];
+
+        $stmt->execute([
+            $comment,
+            $addedById,
+            $carId
+        ]);
+    }
+
     public function getCars(): array
     {
         $result = [];

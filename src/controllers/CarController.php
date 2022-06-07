@@ -47,8 +47,9 @@ class CarController extends AppController {
     {   
         if ($this->isPost()) 
         {
-            $cars = $this->carRepository->getCars();
-            return $this->render('cars', ['cars' => $cars]);
+            $this->carRepository->addCarComment($_POST['carId'], $_POST['comment']);
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/cars");
         }
         $this->render('comment-car', ['messages' => $this->message]);
     }
