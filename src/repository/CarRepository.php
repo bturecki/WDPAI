@@ -2,6 +2,7 @@
 
 require_once 'Repository.php';
 require_once __DIR__.'/../models/Car.php';
+require_once __DIR__.'/../models/CarComment.php';
 
 class CarRepository extends Repository
 {
@@ -79,6 +80,28 @@ class CarRepository extends Repository
                  $car['model'],
                  $car['image'],
                  $car['id']
+             );
+         }
+
+        return $result;
+    }
+
+    public function getCarComments(int $carId): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM v_user_car_comments WHERE car_id = :carId;
+        ');
+        $stmt->bindParam(':carId', $carId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+         foreach ($comments as $comment) {
+             $result[] = new CarComment(
+                 $comment['comment'],
+                 $comment['email']
              );
          }
 

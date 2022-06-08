@@ -33,6 +33,15 @@
         </nav>
         <main>
             <section class="car-form">
+            <?php foreach($carComments as $comment): ?>
+                    <div>
+                        <div>
+                            <p><?= $comment->getUserEmail().": ".$comment->getComment(); ?></p>
+                            <div class="social-section">
+                        </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
                 <h1>COMMENT CAR</h1>
                 <form action="commentCar" method="POST" ENCTYPE="multipart/form-data">
                 <div class="messages">

@@ -51,7 +51,8 @@ class CarController extends AppController {
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/cars");
         }
-        $this->render('comment-car', ['messages' => $this->message]);
+        $carComments = $this->carRepository->getCarComments($_GET['id']);
+        $this->render('comment-car', ['carComments' => $carComments]);
     }
 
     public function search()
