@@ -7,19 +7,22 @@ class User {
     private $surname;
     private $phone;
     private $id;
+    private $isAdmin;
 
     public function __construct(
         string $email,
         string $password,
         string $name,
         string $surname,
-        int $id = null
+        int $id = null,
+        int $isAdmin = 0
     ) {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
         $this->id = $id;
+        $this->isAdmin = $isAdmin;
     }
 
     public function getEmail(): string 
@@ -63,6 +66,11 @@ class User {
     }
     
     public function getId()
+    {
+        return $this->id;
+    }    
+
+    public function getIsAdmin()
     {
         return $this->id;
     }

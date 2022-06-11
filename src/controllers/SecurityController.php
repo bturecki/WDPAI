@@ -39,6 +39,7 @@ class SecurityController extends AppController {
         }
         $_SESSION['loggedin'] = true;
         $_SESSION['user_id'] = $user->getId();
+        $_SESSION['is_admin'] = $user->getIsAdmin();
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/cars");
     }
