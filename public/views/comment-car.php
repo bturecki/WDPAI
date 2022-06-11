@@ -10,27 +10,7 @@
 
 <body>
     <div class="base-container">
-        <nav>
-            <img src="public/img/logo.svg">
-            <ul>
-                <li>
-                    <i class="fas fa-car-diagram"></i>
-                    <a href="cars" class="button">cars</a>
-                </li>
-                <li>
-                    <i class="fas fa-car-diagram"></i>
-                    <a href="addCar" class="button">add car</a>
-                </li>
-                <li>
-                    <i class="fas fa-car-diagram"></i>
-                    <a href="#" class="button">users</a>
-                </li>
-                <li>
-                    <i class="fas fa-car-diagram"></i>
-                    <a href=".." class="button">log out</a>
-                </li>
-            </ul>
-        </nav>
+    <?php include('menu.php') ?>
         <main>
             <section class="car-form">
             <?php foreach($carComments as $comment): ?>
