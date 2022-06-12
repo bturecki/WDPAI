@@ -21,7 +21,7 @@ class AppController {
     protected function render(string $template = null, array $variables = [])
     {
         session_start();
-        if ($template == 'login' || $template == 'register' || $_SESSION['loggedin'] == true)
+        if ((isset($_COOKIE['is_admin']) && $_COOKIE['is_admin'] == 1 && $template == 'users') || (($template == 'login' || $template == 'register' || $_SESSION['loggedin'] == true) && $template != 'users'))
         {
             $templatePath = 'public/views/'. $template.'.php';
             $output = 'File not found';

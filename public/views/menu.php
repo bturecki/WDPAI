@@ -24,7 +24,7 @@
                 <?php if(isset($_COOKIE['is_admin']) && $_COOKIE['is_admin'] == 1) : ?>
                 <li>
                     <i class="fas fa-car-diagram"></i>
-                    <a href="#" class="button">users</a>
+                    <a href="users" class="button">users</a>
                 </li>
                 <?php endif; ?>
                 <li>

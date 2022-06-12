@@ -14,6 +14,7 @@ class User {
         string $password,
         string $name,
         string $surname,
+        string $phone,
         int $id = null,
         int $isAdmin = 0
     ) {
@@ -21,6 +22,7 @@ class User {
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
+        $this->phone = $phone;
         $this->id = $id;
         $this->isAdmin = $isAdmin;
     }

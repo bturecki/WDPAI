@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/cars.css">
 
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
-    <title>CARS</title>
+    <title>COMMENT A CAR</title>
 </head>
 
 <body>
