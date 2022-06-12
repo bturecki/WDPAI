@@ -70,8 +70,8 @@ class User {
         return $this->id;
     }    
 
-    public function getIsAdmin()
+    public function getIsAdmin() : int
     {
-        return $this->id;
+        return $this->isAdmin;
     }
 }
