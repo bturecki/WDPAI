@@ -26,6 +26,21 @@
                     </div>
                     <input name="title" type="text" placeholder="title">
                     <textarea name="description" rows=5 placeholder="description"></textarea>
+                    
+                <fieldset>
+                    <legend>Select a city:</legend>
+
+                    <div>
+                    <input type="radio" id="cracow" name="city" value="1"
+                            checked>
+                    <label for="Cracow">Cracow</label>
+                    </div>
+
+                    <div>
+                    <input type="radio" id="warsaw" name="city" value="2">
+                    <label for="warsaw">Warsaw</label>
+                    </div>
+                </fieldset>
 
                     <input type="file" name="file"/><br/>
                     <button type="submit">send</button>

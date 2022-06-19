@@ -33,8 +33,8 @@ class CarRepository extends Repository
     {
         $date = new DateTime();
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO t_car (make, model, image, car_owner)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO t_car (make, model, image, city_id, car_owner)
+            VALUES (?, ?, ?, ?, ?)
         ');
 
         session_start();
@@ -44,6 +44,7 @@ class CarRepository extends Repository
             $car->getTitle(),
             $car->getDescription(),
             $car->getImage(),
+            $car->getCity(),
             $addedById
         ]);
     }

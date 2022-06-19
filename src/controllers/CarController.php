@@ -35,7 +35,7 @@ class CarController extends AppController {
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );
 
-            $car = new Car($_POST['title'], $_POST['description'], $_FILES['file']['name']);
+            $car = new Car($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['city']);
             $this->carRepository->addCar($car);
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/cars");
