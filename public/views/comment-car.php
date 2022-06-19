@@ -22,7 +22,6 @@
                         </div>
                     </div>
                 <?php endforeach; ?>
-                <h1>COMMENT CAR</h1>
                 <form action="commentCar" method="POST" ENCTYPE="multipart/form-data">
                 <div class="messages">
                         <?php
@@ -34,7 +33,7 @@
                         ?>
                     </div>
                     <input name="carId" type="hidden" value="<?php echo $_GET['id']?>"></textarea>
-                    <textarea name="comment" rows=5 placeholder="comment"></textarea>
+                    <textarea name="comment" rows=5 placeholder="add new comment"></textarea>
                     <button type="submit">send</button>
                 </form>
             </section>
