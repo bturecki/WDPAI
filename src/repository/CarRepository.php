@@ -10,7 +10,7 @@ class CarRepository extends Repository
     public function getCar(int $id): ?Car
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.t_car WHERE id = :id
+            SELECT t.*, c.city_name FROM public.t_car t inner join t_city c on t.city_id = c.id WHERE id = :id
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -24,7 +24,8 @@ class CarRepository extends Repository
         return new Car(
             $car['title'],
             $car['description'],
-            $car['image']
+            $car['image'],
+            $car['city_name']
         );
     }
 
@@ -69,7 +70,7 @@ class CarRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM t_car;
+            SELECT t.*, c.city_name FROM public.t_car t inner join t_city c on t.city_id = c.id;
         ');
         $stmt->execute();
         $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -79,6 +80,7 @@ class CarRepository extends Repository
                  $car['make'],
                  $car['model'],
                  $car['image'],
+                 $car['city_name'],
                  $car['id']
              );
          }

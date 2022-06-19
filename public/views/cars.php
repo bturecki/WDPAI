@@ -24,11 +24,8 @@
                     <div id="<?= $car->getId(); ?>">
                         <img src="public/uploads/<?= $car->getImage(); ?>">
                         <div>
-                            <h2><?= $car->getTitle(); ?></h2>
-                            <p><?= $car->getDescription(); ?></p>
-                            <div class="social-section">
+                            <h2><?= $car->getCity() . ", " . $car->getTitle() . " " . $car->getDescription() ?></h2>
                             <i class="fas fa-comment">comment</i>
-                        </div>
                         </div>
                     </div>
                 <?php endforeach; ?>

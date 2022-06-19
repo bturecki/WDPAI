@@ -4,13 +4,15 @@ class Car {
     private $title;
     private $description;
     private $image;
+    private $city;
     private $id;
 
-    public function __construct($title, $description, $image, $id = null)
+    public function __construct($title, $description, $image, $city, $id = null)
     {
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
+        $this->city = $city;
         $this->id = $id;
     }
 
@@ -42,6 +44,16 @@ class Car {
     public function setImage(string $image)
     {
         $this->image = $image;
+    }
+
+    public function getCity():string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city)
+    {
+        $this->city = $city;
     }
 
     public function getId():string
