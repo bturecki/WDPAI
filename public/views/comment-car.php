@@ -15,11 +15,7 @@
             <section class="car-form">
             <?php foreach($carComments as $comment): ?>
                     <div>
-                        <div>
-                            <p><?= $comment->getUserEmail().": ".$comment->getComment(); ?></p>
-                            <div class="social-section">
-                        </div>
-                        </div>
+                        <p><?= $comment->getUserEmail().": ".$comment->getComment(); ?></p>
                     </div>
                 <?php endforeach; ?>
                 <form action="commentCar" method="POST" ENCTYPE="multipart/form-data">
