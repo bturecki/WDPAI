@@ -13,5 +13,7 @@ Router::post('register', 'SecurityController');
 Router::post('search', 'CarController');
 Router::post('commentCar', 'CarController');
 Router::post('users', 'SecurityController');
+Router::get('map', 'MapController');
+Router::get('places', 'MapController');
 
 Router::run($path);

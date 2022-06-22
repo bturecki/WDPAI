@@ -1,0 +1,27 @@
+#map {
+    height: 100vh;
+}
+
+.marker {
+    background-image: url('https://www.freepnglogos.com/uploads/pin-png/location-pin-connectsafely-37.png');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 0 1em rgba(0,0,0,0.5) ;
+}
+
+section {
+    grid-template-columns: 1fr !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}

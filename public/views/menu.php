@@ -21,6 +21,10 @@
                     <i class="fas fa-car-diagram"></i>
                     <a href="addCar" class="button">add car</a>
                 </li>
+                <li>
+                    <i class="fas fa-car-diagram"></i>
+                    <a href="map" class="button">supported locations</a>
+                </li>
                 <?php if(isset($_COOKIE['is_admin']) && $_COOKIE['is_admin'] == 1) : ?>
                 <li>
                     <i class="fas fa-car-diagram"></i>
