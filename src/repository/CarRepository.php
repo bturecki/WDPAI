@@ -49,6 +49,17 @@ class CarRepository extends Repository
         ]);
     }
 
+    public function deleteCar($carId): void
+    {
+        $date = new DateTime();
+        $stmt = $this->database->connect()->prepare('
+            DELETE FROM t_car WHERE id = :carId;
+        ');
+
+        $stmt->bindParam(':carId', $carId, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
     public function addCarComment(int $carId, string $comment): void
     {
         $stmt = $this->database->connect()->prepare('

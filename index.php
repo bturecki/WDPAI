@@ -15,5 +15,6 @@ Router::post('commentCar', 'CarController');
 Router::post('users', 'SecurityController');
 Router::get('map', 'MapController');
 Router::get('places', 'MapController');
+Router::get('deleteCar', 'CarController');
 
 Router::run($path);

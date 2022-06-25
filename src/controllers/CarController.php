@@ -55,6 +55,12 @@ class CarController extends AppController {
         $this->render('comment-car', ['carComments' => $carComments]);
     }
 
+    public function deleteCar()
+    {   
+        $this->carRepository->deleteCar($_GET['id']);
+        header("Location: {$url}/cars");
+    }
+
     public function search()
     {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';

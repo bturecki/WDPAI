@@ -7,6 +7,7 @@
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/comments.js" defer></script>
+    <script type="text/javascript" src="./public/js/carMgmt.js" defer></script>
     <title>CARS</title>
 </head>
 
@@ -26,6 +27,9 @@
                         <div>
                             <h2><?= $car->getCity() . ", " . $car->getTitle() . " " . $car->getDescription() ?></h2>
                             <i class="fas fa-comment">comment</i>
+                            <?php if(isset($_COOKIE['is_admin']) && $_COOKIE['is_admin'] == 1) : ?>
+                                <i class="fas fa-delete">delete</i>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
