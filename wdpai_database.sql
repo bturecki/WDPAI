@@ -5,7 +5,7 @@
 -- Dumped from database version 14.4 (Ubuntu 14.4-1.pgdg20.04+1)
 -- Dumped by pg_dump version 14.3
 
--- Started on 2022-06-23 19:19:13
+-- Started on 2022-06-27 17:57:13
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -293,11 +293,8 @@ ALTER TABLE ONLY public.t_user_details ALTER COLUMN id SET DEFAULT nextval('publ
 --
 
 COPY public.t_car (make, model, id, image, car_owner, city_id) FROM stdin;
-fernando	alonso	18	Alonso_2016.jpg	3	1
-pog	champ	19	549-5499146_167kib-560x943-animated-sad-frog-pepe-the-frog.png	3	1
-Ferrari	Szybkie	23	388411.jpg	3	1
-Ferrari	Wolne	24	tipo-184-kit-1.jpg	3	2
-Szybkie	Auto	25	km1.png	3	2
+Honda	Crx	62	9113496535b68f4ce74b4faa165d3cfe--cars-usa--honda.jpg	3	1
+Fiat	Tipo	63	istockphoto-1157655660-612x612.jpg	3	2
 \.
 
 
@@ -308,12 +305,8 @@ Szybkie	Auto	25	km1.png	3	2
 --
 
 COPY public.t_car_comment (id, car_id, comment, i_user, i_date) FROM stdin;
-1	18	TEST	3	2022-06-07
-2	18	test2	3	2022-06-08
-3	19	witam	3	2022-06-08
-4	18	witam	3	2022-06-11
-5	18	cyk	3	2022-06-19
-6	23	test	3	2022-06-20
+42	62	Cool car!	4	2022-06-27
+43	62	Thank you!	3	2022-06-27
 \.
 
 
@@ -338,6 +331,7 @@ COPY public.t_city (id, city_name, coordinates) FROM stdin;
 COPY public.t_user (email, password, id_user_details, id, is_admin) FROM stdin;
 bartek@pk.pl	$2y$10$zSjlS7KvC0FwhSbaxtYIZO8Mc1IWJQyYnyZtIpd7VABo291FMVd9W	3	3	1
 bartek2@pk.pl	$2y$10$nEcxmXu.4P0ktX0iZyOiyeYbQm41AN6s95fSMKDNtRn97UbDjOBbG	4	4	0
+bt@pk.pl	$2y$10$AI2PMQHYBiRsz6gVTsSjW.HhRxjrgkqIENqkQBXgY0xYKOza7Ig6G	5	5	0
 \.
 
 
@@ -352,6 +346,7 @@ Bartosz	Turecki	1	\N
 Bar	Tur	2	123
 BB	TT	3	123123123
 User	Testowy	4	123
+Bart	Osz	5	21212121
 \.
 
 
@@ -361,7 +356,7 @@ User	Testowy	4	123
 -- Name: t_car_comment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mxcbqopgvfyrji
 --
 
-SELECT pg_catalog.setval('public.t_car_comment_id_seq', 38, true);
+SELECT pg_catalog.setval('public.t_car_comment_id_seq', 43, true);
 
 
 --
@@ -370,7 +365,7 @@ SELECT pg_catalog.setval('public.t_car_comment_id_seq', 38, true);
 -- Name: t_car_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mxcbqopgvfyrji
 --
 
-SELECT pg_catalog.setval('public.t_car_id_seq', 57, true);
+SELECT pg_catalog.setval('public.t_car_id_seq', 63, true);
 
 
 --
@@ -388,7 +383,7 @@ SELECT pg_catalog.setval('public.t_city_id_seq', 1, false);
 -- Name: t_user_details_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mxcbqopgvfyrji
 --
 
-SELECT pg_catalog.setval('public.t_user_details_id_seq', 4, true);
+SELECT pg_catalog.setval('public.t_user_details_id_seq', 5, true);
 
 
 --
@@ -397,7 +392,7 @@ SELECT pg_catalog.setval('public.t_user_details_id_seq', 4, true);
 -- Name: t_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mxcbqopgvfyrji
 --
 
-SELECT pg_catalog.setval('public.t_user_id_seq', 4, true);
+SELECT pg_catalog.setval('public.t_user_id_seq', 5, true);
 
 
 --
@@ -490,7 +485,7 @@ ALTER TABLE ONLY public.t_user
 GRANT ALL ON LANGUAGE plpgsql TO mxcbqopgvfyrji;
 
 
--- Completed on 2022-06-23 19:19:17
+-- Completed on 2022-06-27 17:57:18
 
 --
 -- PostgreSQL database dump complete
