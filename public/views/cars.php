@@ -43,7 +43,7 @@
         <img src="">
         <div>
             <h2>title</h2>
-            <p>description</p>
+            <i class="fas fa-comment">comment</i>
         </div>
     </div>
 </template>

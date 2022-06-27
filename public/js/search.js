@@ -38,9 +38,7 @@ function createcar(car) {
     const image = clone.querySelector("img");
     image.src = `/public/uploads/${car.image}`;
     const title = clone.querySelector("h2");
-    title.innerHTML = car.make;
-    const description = clone.querySelector("p");
-    description.innerHTML = car.model;
+    title.innerHTML = car.city_name + ", " + car.make + " " + car.model; 
 
     carContainer.appendChild(clone);
 }

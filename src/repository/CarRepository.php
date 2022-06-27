@@ -127,7 +127,7 @@ class CarRepository extends Repository
         $searchString = '%' . strtolower($searchString) . '%';
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM t_car WHERE LOWER(make) LIKE :search OR LOWER(model) LIKE :search
+            SELECT c.*, t.city_name FROM t_car c inner join t_city t on c.city_id = t.id WHERE LOWER(make) LIKE :search OR LOWER(model) LIKE :search
         ');
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stmt->execute();
